@@ -6,7 +6,7 @@ SITENAME = 'spokehub.io'
 SITEURL = ''
 
 PATH = 'content'
-
+GITHUB_URL = 'http://github.com/ametaireau/'
 TIMEZONE = 'Europe/Paris'
 
 DEFAULT_LANG = 'English'

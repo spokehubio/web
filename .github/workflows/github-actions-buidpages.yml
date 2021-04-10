@@ -1,6 +1,9 @@
 name: Build website pages
 
-on: [push]
+on:
+  push:
+    branches:
+      - master
 
 jobs:
   build:
@@ -25,9 +28,15 @@ jobs:
       with:
         command: install -d # Install all dependencies, including development ones
     
-    - name: Test
+    - name: Build website pages
       uses: VaultVulp/action-pipenv@v2.0.1
       with:
         command: run pelican content -s publishconf.py
+    
+    - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@4.1.1
+        with:
+          branch: gh-pages # The branch the action should deploy to.
+          folder: output # The folder the action should deploy.
 
 
